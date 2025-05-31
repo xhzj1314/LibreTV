@@ -114,7 +114,7 @@ const API_SITES = {
         name: 'iKun资源'
     },
     testSource: {
-        api: 'https://www.example.com/api.php/provide/vod',
+        api: 'https://www.example.com/api.php/provide/vod'，
         name: '空内容测试源',
         adult: true
     },
@@ -136,11 +136,11 @@ const API_SITES = {
     //     name: 'jkun资源',
     //     adult: true
     // },
-    // bwzy: {
-    //     api: 'https://api.bwzym3u8.com',
-    //     name: '百万资源',
-    //     adult: true
-    // },
+     bwzy: {
+         api: 'https://api.bwzym3u8.com'，
+         name: '百万资源',
+         adult: true
+     },
     // souav: {
     //     api: 'https://api.souavzy.vip',
     //     name: 'souav资源',
