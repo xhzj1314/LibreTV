@@ -24,13 +24,16 @@ const API_SITES = {
     ckzy: {
          api: 'https://www.ckzy1.com',
          name: 'CK资源',
-    },bwzy: {
+    },
+    bwzy: {
         api: 'https://api.bwzym3u8.com'，
         name: '百万资源',
+        adult: true
      },
     souav: {
          api: 'https://api.souavzy.vip'，
          name: 'souav资源',
+         adult: false
      },
     dyttzy: {
         api: 'http://caiji.dyttzyapi.com/api.php/provide/vod',
