@@ -38,10 +38,10 @@ const API_SITES = {
         api: 'https://tyyszy.com/api.php/provide/vod',
         name: '天涯资源',
     },
-     xiaomaomi: {
-         api: 'https://zy.xiaomaomi.cc/api.php/provide/vod',
-         name: '小猫咪资源',
-     },
+    // xiaomaomi: {
+    //     api: 'https://zy.xiaomaomi.cc/api.php/provide/vod',
+    //     name: '小猫咪资源',
+    // },
     ffzy: {
         api: 'http://ffzy5.tv/api.php/provide/vod',
         name: '非凡影视',
@@ -96,9 +96,7 @@ const API_SITES = {
     baidu: {
         api: 'https://api.apibdzy.com/api.php/provide/vod',
         name: '百度云资源'
-    },ckzy: {
-         api: 'https://www.ckzy1.com',
-         name: 'CK资源',
+    },
     wujin: {
         api: 'https://api.wujinapi.me/api.php/provide/vod',
         name: '无尽资源'
