@@ -29,10 +29,6 @@ const API_SITES = {
         api: 'https://api.bwzym3u8.com'，
         name: '百万资源',
      },
-    souav: {
-         api: 'https://api.souavzy.vip'，
-         name: 'souav资源',
-     },
     dyttzy: {
         api: 'http://caiji.dyttzyapi.com/api.php/provide/vod',
         name: '电影天堂资源',
