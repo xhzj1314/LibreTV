@@ -117,10 +117,12 @@ const API_SITES = {
      ckzy: {
          api: 'https://www.ckzy1.com',
          name: 'CK资源',
+         adult: true
      },
      jkun: {
          api: 'https://jkunzyapi.com',
          name: 'jkun资源',
+         adult: false
      },
      bwzy: {
          api: 'https://api.bwzym3u8.com',
