@@ -149,6 +149,7 @@ const API_SITES = {
      xiaomaomi: {
          api: 'https://zy.xiaomaomi.cc/api.php/provide/vod',
          name: '小猫咪资源',
+         adult: true
      },
      yutu: {
          api: 'https://yutuzy10.com',
