@@ -28,12 +28,10 @@ const API_SITES = {
     bwzy: {
         api: 'https://api.bwzym3u8.com'，
         name: '百万资源',
-        adult: true,
      },
     souav: {
          api: 'https://api.souavzy.vip'，
          name: 'souav资源',
-         adult: false,
      },
     dyttzy: {
         api: 'http://caiji.dyttzyapi.com/api.php/provide/vod',
