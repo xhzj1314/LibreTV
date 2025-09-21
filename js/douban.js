@@ -408,37 +408,67 @@ function fetchDoubanTags() {
 
 // 渲染热门推荐内容
 function renderRecommend(tag, pageLimit, pageStart) {
-  const container = document.getElementById("douban-results");
-  if (!container) return;
+    const container = document.getElementById("douban-results");
+    if (!container) return;
 
-  container.innerHTML = '<div class="text-pink-500">加载中...</div>';
+    const loadingOverlayHTML = `
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-10">
+            <div class="flex items-center justify-center">
+                <div class="w-6 h-6 border-2 border-pink-500 border-t-transparent rounded-full animate-spin inline-block"></div>
+                <span class="text-pink-500 ml-4">加载中...</span>
+            </div>
+        </div>
+    `;
 
-  fetch('http://100.89.69.22:880/api.php/provide/vod/?ac=detail')
-    .then(res => res.json())
-    .then(data => {
-      const list = data.list.slice(0, pageLimit);
-      const fragment = document.createDocumentFragment();
-
-      list.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "video-card";
-        card.innerHTML = `
-          <img src="${item.vod_pic}" alt="${item.vod_name}" />
-          <h4>${item.vod_name}</h4>
-          <a href="watch.html?id=${item.vod_id}">立即播放</a>
-        `;
-        fragment.appendChild(card);
-      });
-
-      container.innerHTML = "";
-      container.appendChild(fragment);
-    })
-    .catch(error => {
-      console.error("获取推荐内容失败：", error);
-      container.innerHTML = '<div class="text-red-500">❌ 推荐内容加载失败</div>';
-    });
+    container.classList.add("relative");
+    container.insertAdjacentHTML('beforeend', loadingOverlayHTML);
+    
+    const target = `https://movie.douban.com/j/search_subjects?type=${doubanMovieTvCurrentSwitch}&tag=${tag}&sort=recommend&page_limit=${pageLimit}&page_start=${pageStart}`;
+    
+    // 使用通用请求函数
+    fetchDoubanData(target)
+        .then(data => {
+            renderDoubanCards(data, container);
+        })
+        .catch(error => {
+            console.error("获取豆瓣数据失败：", error);
+            container.innerHTML = `
+                <div class="col-span-full text-center py-8">
+                    <div class="text-red-400">❌ 获取豆瓣数据失败，请稍后重试</div>
+                    <div class="text-gray-500 text-sm mt-2">提示：使用VPN可能有助于解决此问题</div>
+                </div>
+            `;
+        });
 }
 
+async function fetchDoubanData(url) {
+    // 添加超时控制
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10秒超时
+    
+    // 设置请求选项，包括信号和头部
+    const fetchOptions = {
+        signal: controller.signal,
+        headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
+            'Referer': 'https://movie.douban.com/',
+            'Accept': 'application/json, text/plain, */*',
+        }
+    };
+
+    try {
+        // 添加鉴权参数到代理URL
+        const proxiedUrl = await window.ProxyAuth?.addAuthToProxyUrl ? 
+            await window.ProxyAuth.addAuthToProxyUrl(PROXY_URL + encodeURIComponent(url)) :
+            PROXY_URL + encodeURIComponent(url);
+            
+        // 尝试直接访问（豆瓣API可能允许部分CORS请求）
+        const response = await fetch(proxiedUrl, fetchOptions);
+        clearTimeout(timeoutId);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         
         return await response.json();
     } catch (err) {
