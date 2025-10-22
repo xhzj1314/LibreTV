@@ -25,17 +25,15 @@ const API_SITES = {
     hongniuy: {
         api: 'https://www.hongniuzy3.com/api.php/provide/vod',
         name: '红牛资源',
-        detail: 'http://caiji.dyttzyapi.com',
     },
      haohuazy: {
         api: 'https://hhzyapi.com/api.php/provide/vod',
         name: '豪华资源',
-        detail: 'http://caiji.dyttzyapi.com',
     },
      dyttzy: {
         api: 'https://caiji.dyttzyapi.com/api.php/provide/vod',
         name: '电影天堂资源',
-        detail: 'http://caiji.dyttzyapi.com',
+        detail: 'https://caiji.dyttzyapi.com',
     },
     ruyi: {
         api: 'https://cj.rycjapi.com/api.php/provide/vod',
@@ -51,12 +49,12 @@ const API_SITES = {
     },
     subo: {
         api: 'https://subocaiji.com/api.php/provide/vod',
-        name: '速播资源'，
+        name: '速播资源',
     },
     ffzy: {
         api: 'http://ffzy5.tv/api.php/provide/vod',
         name: '非凡影视',
-        detail: 'http://ffzy5.tv',
+        detail: 'https://ffzy5.tv',
     },
     heimuer: {
         api: 'https://json.heimuer.xyz/api.php/provide/vod',
@@ -154,7 +152,7 @@ const API_SITES = {
          api: 'https://api.douapi.cc/api.php/provide/vod',
          name: '豆豆资源',
          adult: true
-      }，
+      },
     xingba: {
          api: 'https://api.xgbbk8.com/api.php/provide/vod',
          name: '杏吧资源',
@@ -164,7 +162,7 @@ const API_SITES = {
          api: 'https://naixxzy6.com/api.php/provide/vod',
          name: '奶香',
          adult: true
-      }，
+      },
     zuise: {
          api: 'https://api.zuiseapi.com/api.php/provide/vod',
          name: '最色资源',
