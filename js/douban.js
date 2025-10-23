@@ -423,7 +423,7 @@ function renderRecommend(tag, pageLimit, pageStart) {
     container.classList.add("relative");
     container.insertAdjacentHTML('beforeend', loadingOverlayHTML);
     
-    https://movie.douban.com/j/search_subjects?type=tv&tag=动画&sort=recommend&page_limit=16&page_start=0
+    const target = `https://movie.douban.com/j/search_subjects?type=tv&tag=动画&sort=recommend&page_limit=${pageLimit}&page_start=${pageStart}`;
 
     // 使用通用请求函数
     fetchDoubanData(target)
