@@ -465,7 +465,7 @@ function initPlayer(videoUrl) {
         playsInline: true,
         autoPlayback: false,
         airplay: true,
-        hotkey: true,
+        hotkey: false,
         theme: '#23ade5',
         lang: navigator.language.toLowerCase(),
         moreVideoAttr: {
