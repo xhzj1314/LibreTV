@@ -455,7 +455,7 @@ function initPlayer(videoUrl) {
         loop: false,
         flip: false,
         playbackRate: true,
-        aspectRatio: false,
+        aspectRatio: true,
         fullscreen: true,
         fullscreenWeb: true,
         subtitleOffset: false,
@@ -465,7 +465,7 @@ function initPlayer(videoUrl) {
         playsInline: true,
         autoPlayback: false,
         airplay: true,
-        hotkey: false,
+        hotkey: true,
         theme: '#23ade5',
         lang: navigator.language.toLowerCase(),
         moreVideoAttr: {
