@@ -236,6 +236,51 @@
     <script src="js/player.js"></script>
 
     <script>
+(function () {
+  const skipIntroEnd = 15;     // 片头结束时间（秒）
+  const skipOutroStart = 1250; // 片尾开始时间（秒）
+
+  const waitForVideo = setInterval(() => {
+    const video = document.querySelector('video');
+    if (video) {
+      clearInterval(waitForVideo);
+
+      // 自动跳过片头
+      video.addEventListener('loadedmetadata', () => {
+        if (video.currentTime < skipIntroEnd) {
+          video.currentTime = skipIntroEnd;
+        }
+      });
+
+      // 自动跳过片尾
+      video.addEventListener('timeupdate', () => {
+        if (video.currentTime >= skipOutroStart) {
+          video.pause();
+          // 可扩展：跳转下一集或显示提示
+        }
+      });
+
+      // 添加“跳过片头”按钮
+      const btn = document.createElement('button');
+      btn.innerText = '跳过片头';
+      btn.style.position = 'absolute';
+      btn.style.top = '10px';
+      btn.style.right = '10px';
+      btn.style.zIndex = 9999;
+      btn.style.padding = '6px 12px';
+      btn.style.background = '#ff5c5c';
+      btn.style.color = '#fff';
+      btn.style.border = 'none';
+      btn.style.borderRadius = '4px';
+      btn.style.cursor = 'pointer';
+      btn.onclick = () => video.currentTime = skipIntroEnd;
+      document.body.appendChild(btn);
+    }
+  }, 1000);
+})();
+</script>
+
+        
         // 创建全局环境变量对象
         window.__ENV__ = window.__ENV__ || {};
         
