@@ -50,7 +50,7 @@ const API_SITES = {
     subo: {
         api: 'https://subocaiji.com/api.php/provide/vod',
         name: '速播资源',
-    },
+    }，
     ffzy: {
         api: 'http://ffzy5.tv/api.php/provide/vod',
         name: '非凡影视',
@@ -89,7 +89,7 @@ const API_SITES = {
     mozhua: {
         api: 'https://mozhuazy.com/api.php/provide/vod',
         name: '魔爪资源',
-    },
+    }，
     mdzy: {
         api: 'https://www.mdzyapi.com/api.php/provide/vod',
         name: '魔都资源',
@@ -121,68 +121,68 @@ const API_SITES = {
     xiaoji: {
         api: 'https://api.xiaojizy.live/api.php/provide/vod',
         name: '小鸡资源',
-        adult: true
+        adult: false
     },
      ckzy: {
         api: 'https://www.ckzy1.com/api.php/provide/vod',
         name: 'CK资源',
-        adult: true
+        adult: false
      },
      jkun: {
          api: 'https://jkunzyapi.com/api.php/provide/vod',
          name: 'jkun资源',
-         adult: true
+         adult: false
      },
      bwzy: {
          api: 'https://api.bwzym3u8.com/api.php/provide/vod',
          name: '百万资源',
-         adult: true
+         adult: false
      },
      r155: {
          api: 'https://155api.com/api.php/provide/vod',
          name: '155资源',
-         adult: true
+         adult: false
      },
      lsb: {
          api: 'https://apilsbzy1.com/api.php/provide/vod',
          name: 'lsb资源',
-         adult: true
+         adult: false
       },
     doudou: {
          api: 'https://api.douapi.cc/api.php/provide/vod',
          name: '豆豆资源',
-         adult: true
+         adult: false
       },
     xingba: {
          api: 'https://api.xgbbk8.com/api.php/provide/vod',
          name: '杏吧资源',
-         adult: true
+         adult: false
       },
     naixiang: {
          api: 'https://naixxzy6.com/api.php/provide/vod',
          name: '奶香',
-         adult: true
+         adult: false
       },
     zuise: {
          api: 'https://api.zuiseapi.com/api.php/provide/vod',
          name: '最色资源',
-         adult: true
+         adult: false
        }, 
      huangcang: {
           api: 'https://hsckzy.vip/api.php/provide/vod',
           name: '黄色仓库',
           detail: 'https://hsckzy.vip',
-          adult: true
+          adult: false
       },
      yutu: {
          api: 'https://yutuzy10.com/api.php/provide/vod',
          name: '玉兔资源',
-         adult: true
+         adult: false
      },
       sosuo: {
          api: 'https://api.souavzy.vip/api.php/provide/vod',
          name: '搜索资源',
-         adult: true
+         adult: false
      },
    
     //ARCHIVE https://telegra.ph/APIs-08-12
