@@ -50,7 +50,7 @@ const API_SITES = {
     subo: {
         api: 'https://subocaiji.com/api.php/provide/vod',
         name: '速播资源',
-    }，
+    },
     ffzy: {
         api: 'http://ffzy5.tv/api.php/provide/vod',
         name: '非凡影视',
@@ -72,7 +72,7 @@ const API_SITES = {
     wolong: {
         api: 'https://wolongzyw.com/api.php/provide/vod',
         name: '卧龙资源',
-    }, 
+    },
     hwba: {
         api: 'https://cjhwba.com/api.php/provide/vod',
         name: '华为吧资源',
@@ -89,7 +89,7 @@ const API_SITES = {
     mozhua: {
         api: 'https://mozhuazy.com/api.php/provide/vod',
         name: '魔爪资源',
-    }，
+    },
     mdzy: {
         api: 'https://www.mdzyapi.com/api.php/provide/vod',
         name: '魔都资源',
@@ -194,7 +194,7 @@ function extendAPISites(newSites) {
 }
 
 // 暴露到全局
-window.API_SITES = API_SITES;
+window。API_SITES = API_SITES;
 window.extendAPISites = extendAPISites;
 
 
