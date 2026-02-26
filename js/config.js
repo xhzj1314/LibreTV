@@ -117,7 +117,7 @@ const API_SITES = {
     ikun: {
         api: 'https://ikunzyapi.com/api.php/provide/vod',
         name: 'iKun资源',
-    }， 
+    }, 
     //ARCHIVE https://telegra.ph/APIs-08-12
 };
 
